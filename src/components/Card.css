@@ -1,0 +1,43 @@
+.card {
+  display: grid;
+  grid-template-areas:
+    "cost . title title title title"
+    "img img img img img img"
+    "desc desc desc desc desc desc"
+    ". . . val val val";
+
+  width: 20vw;
+  box-shadow:  0 2px 2px  0   rgba(0, 0, 0, 0.14),
+               0 3px 1px -2px rgba(0, 0, 0, 0.12),
+               0 1px 5px  0   rgba(0, 0, 0, 0.2)
+}
+.card > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__cost {
+  grid-area: cost;
+}
+
+.card__title {
+  grid-area: title;
+}
+
+.card__image {
+  grid-area: img;
+  text-align: center;
+}
+
+.card__image img {
+  max-width: 200px;
+}
+
+.card__description {
+  grid-area: desc;
+  padding: 5% 2.5%;
+}
+
+.card__value {
+  grid-area: val;
+}
