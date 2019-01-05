@@ -3,7 +3,7 @@ import "./App.sass";
 
 import Header from "./components/layouts/Header";
 import Game from "./components/Game";
-import Footer from "./components/layouts/Footer";
+//import Footer from "./components/layouts/Footer";
 
 class App extends Component {
   render() {
@@ -11,7 +11,6 @@ class App extends Component {
       <div className="app">
         <Header />
         <Game />
-        <Footer />
       </div>
     );
   }
