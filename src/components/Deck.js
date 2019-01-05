@@ -17,7 +17,7 @@ export class Deck extends Component {
   render() {
     return (
       <Grid container spacing={24}>
-        {this.cards.map( card => <Grid item xs={2}>{card}</Grid> )}
+        {this.cards.map( card => <Grid item xs={6} sm={4} md={3}>{card}</Grid> )}
       </Grid>
     )
   }
