@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { randomCard } from "./Card";
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
+import { randomCard } from "./Card";
 
 export class Deck extends Component {
   constructor(props) {
@@ -15,16 +16,15 @@ export class Deck extends Component {
 
   render() {
     return (
-      <div>
-        <Grid container spacing={16}>
-          {this.cards.map( card => <Grid item>{card}</Grid> )}
-        </Grid>
-      </div>
+      <Grid container spacing={24}>
+        {this.cards.map( card => <Grid item xs={2}>{card}</Grid> )}
+      </Grid>
     )
   }
 }
-/*
-  { Deck.map(card => <Card {...card} />) }
-*/
+
+Deck.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default Deck;

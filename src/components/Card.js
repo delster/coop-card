@@ -1,4 +1,5 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
 import "./Card.sass";
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -43,11 +44,20 @@ const Card = props => {
 
   return (
     <div className="card">
-      <span className="card__cost">Cost: {cost}</span>
-      <p className="card__title">{title}</p>
-      <div className="card__image"><img src={img} alt={title} /></div>
-      <div className="card__description"><p>{description}</p></div>
-      <span className="card__value">Val: {value}</span>
+      <div className="card__top">
+        <span className="card__cost">Cost: {cost}</span>
+        <span className="card__title">{title}</span>
+      </div>
+      <div className="card__image">
+        <img src={img} alt={title} />
+      </div>
+      <div className="card__body">
+        <p>{description}</p>
+      </div>
+      <div className="card__bottom">
+        <Button className="card__debug--play" variant="contained" color="primary">Play Me</Button>
+        <span className="card__value">Val: {value}</span>
+      </div>
     </div>
   );
 };
