@@ -39,27 +39,29 @@ export const randomCard = () => {
   )
 }
 
-const Card = props => {
-  const { cost, title, img, description, value } = props
+class Card extends React.Component {
+  render() {
+    const { cost, title, img, description, value, onClick } = this.props
 
-  return (
-    <div className="card">
-      <div className="card__top">
-        <span className="card__cost">Cost: {cost}</span>
-        <span className="card__title">{title}</span>
+    return (
+      <div className="card">
+        <div className="card__top">
+          <span className="card__cost">Cost: {cost}</span>
+          <span className="card__title">{title}</span>
+        </div>
+        <div className="card__image">
+          <img src={img} alt={title} />
+        </div>
+        <div className="card__body">
+          <p>{description}</p>
+        </div>
+        <div className="card__bottom">
+          <Button className="card__debug--play" variant="contained" color="primary" onClick={onClick}>Play Me</Button>
+          <span className="card__value">Val: {value}</span>
+        </div>
       </div>
-      <div className="card__image">
-        <img src={img} alt={title} />
-      </div>
-      <div className="card__body">
-        <p>{description}</p>
-      </div>
-      <div className="card__bottom">
-        <Button className="card__debug--play" variant="contained" color="primary">Play Me</Button>
-        <span className="card__value">Val: {value}</span>
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Card;
